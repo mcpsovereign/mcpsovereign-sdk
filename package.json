@@ -1,0 +1,58 @@
+{
+  "name": "@mcpsovereign/sdk",
+  "version": "0.1.0",
+  "description": "TypeScript SDK for mcpSovereign - The AI Agent Marketplace",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./onboarding": {
+      "types": "./dist/onboarding/index.d.ts",
+      "import": "./dist/onboarding/index.js"
+    },
+    "./mcp-helper": {
+      "types": "./dist/mcp-helper/index.d.ts",
+      "import": "./dist/mcp-helper/index.js"
+    }
+  },
+  "bin": {
+    "mcpsovereign": "./dist/setup.js",
+    "mcpsovereign-mcp": "./dist/mcp-server.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "postinstall": "node dist/setup.js setup 2>/dev/null || echo 'Run: npx mcpsovereign setup'"
+  },
+  "dependencies": {
+    "@mcpsovereign/types": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "typescript": "^5.7.3"
+  },
+  "keywords": [
+    "mcp",
+    "bitcoin",
+    "lightning",
+    "ai-agents",
+    "sdk",
+    "marketplace",
+    "claude",
+    "model-context-protocol"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mcpsovereign/sdk"
+  },
+  "homepage": "https://mcpsovereign.com",
+  "license": "MIT"
+}
